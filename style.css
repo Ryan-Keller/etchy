@@ -3,8 +3,21 @@
     --grid-rows:1;
 }
 
+.containerWrapper{
+    position: relative;
+    width: 75vw;
+    height: 75vw;
+    border: 30px solid #73ad21;
+    margin: 30px auto;
+    max-height: 450px;
+    max-width: 450px;
+}
+
 #container {
     display: grid;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     grid-template-rows: repeat(var(--grid-rows),1fr);
     grid-template-columns: repeat(var(--grid-cols),1fr);
 
@@ -15,4 +28,22 @@
     border: 1px solid #ddd;
     text-align: center;
     background-color: tomato;
+}
+
+.buttonContainer{
+    padding-left: 40px;
+    height: auto;
+    width: auto;
+    margin: auto;
+}
+
+.btn{
+    height: 75;
+    width: 100px;
+    text-align: center;
+
+}
+
+.slider{
+    margin-top: 10vh;
 }
