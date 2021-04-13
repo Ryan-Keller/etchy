@@ -15,7 +15,7 @@ let makeRows = (rows) =>{
 function makeColorHappen() {
     let cellBox = document.querySelectorAll('.container > div')
     cellBox.forEach((thing) =>{
-        thing.addEventListener('mouseenter', (e)=>{
+        thing.addEventListener('mouseover', (e)=>{
         e.target.style.backgroundColor = 'blue'
         })
     })
@@ -27,6 +27,26 @@ let resetBoard = ()=>{
         thing.style.backgroundColor = 'tomato'
     })
 }
+var clearButton = document.getElementById('btn')
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
 
-makeRows(13)
+slider.oninput = function() {
+    output.innerHTML = this.value;
+}
+makeRows(output.innerText)
 makeColorHappen()
+
+let sliderSetter = ()=>{
+    //tring to reset and grid and make a new one
+    let cellBox = container.querySelectorAll('div')
+    cellBox.forEach((thing) =>{
+        thing.remove()
+    })
+    makeRows(slider.value)
+    makeColorHappen()
+}
+
+slider.addEventListener('mouseup', sliderSetter);
+clearButton.addEventListener('click',resetBoard)
